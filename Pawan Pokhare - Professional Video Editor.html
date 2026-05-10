@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<!-- saved from url=(0033)https://pawanpokhare.netlify.app/ -->
+<html lang="en" crxlauncher=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawan Pokhare - Professional Video Editor</title>
+    <link rel="stylesheet" href="./Pawan Pokhare - Professional Video Editor_files/all.min.css">
+    <link href="./Pawan Pokhare - Professional Video Editor_files/tabler-icons.css" rel="stylesheet">
+    <link href="./Pawan Pokhare - Professional Video Editor_files/css2" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap');
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+        :root {
+            --orange: #FF6B1A;
+            --orange-dim: #cc5510;
+            --bg: #0A0A0A;
+            --bg2: #111111;
+            --bg3: #181818;
+            --text: #F0EDE8;
+            --muted: #888;
+            --border: rgba(255,255,255,0.07);
+        }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: 'DM Sans', sans-serif;
+            overflow-x: hidden;
+        }
+        /* NAV */
+        .nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            background: rgba(10, 10, 10, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
+        .nav-logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 22px;
+            letter-spacing: 2px;
+            color: var(--text);
+        }
+        .nav-logo span {
+            color: var(--orange);
+        }
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        .nav-links a {
+            font-size: 13px;
+            color: var(--muted);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: color 0.2s;
+            cursor: pointer;
+        }
+        .nav-links a:hover {
+            color: var(--orange);
+        }
+        /* HERO */
+        .hero {
+            min-height: 92vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 4rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,107,26,0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .hero-timeline {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            display: flex;
+            align-items: flex-end;
+            gap: 3px;
+            padding: 0 2rem;
+            opacity: 0.15;
+        }
+        .tl-bar {
+            background: var(--orange);
+            border-radius: 2px 2px 0 0;
+            flex: 1;
+        }
+        .hero-tag {
+            display: inline-block;
+            font-size: 11px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--orange);
+            border: 1px solid rgba(255,107,26,0.35);
+            padding: 5px 14px;
+            border-radius: 2px;
+            margin-bottom: 1.5rem;
+        }
+        .hero h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(42px, 8vw, 88px);
+            line-height: 0.95;
+            letter-spacing: 2px;
+            margin-bottom: 1.25rem;
+            color: var(--text);
+        }
+        .hero h1 span {
+            color: var(--orange);
+        }
+        .hero p {
+            font-size: 16px;
+            color: var(--muted);
+            max-width: 520px;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+        .hero-btns {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .btn-primary {
+            background: var(--orange);
+            color: #fff;
+            padding: 12px 28px;
+            border: none;
+            border-radius: 2px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: background 0.2s;
+        }
+        .btn-primary:hover {
+            background: var(--orange-dim);
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--text);
+            padding: 12px 28px;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 2px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: border-color 0.2s, color 0.2s;
+        }
+        .btn-outline:hover {
+            border-color: var(--orange);
+            color: var(--orange);
+        }
+        /* SECTION BASE */
+        .section {
+            padding: 5rem 2rem;
+        }
+        .section-tag {
+            font-size: 11px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--orange);
+            margin-bottom: 0.75rem;
+        }
+        .section-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(32px, 5vw, 52px);
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            line-height: 1;
+        }
+        .divider {
+            width: 48px;
+            height: 2px;
+            background: var(--orange);
+            margin: 1rem 0 2.5rem;
+        }
+        /* ABOUT */
+        .about {
+            background: var(--bg2);
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        .about-left .big-initial {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 120px;
+            line-height: 0.85;
+            color: rgba(255,107,26,0.12);
+            letter-spacing: -4px;
+            margin-bottom: -1rem;
+        }
+        .about-left p {
+            font-size: 15px;
+            color: var(--muted);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .about-right {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .spec-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            background: var(--bg3);
+            border-left: 2px solid var(--orange);
+            border-radius: 0 4px 4px 0;
+        }
+        .spec-item span {
+            font-size: 13px;
+            color: var(--text);
+        }
+        /* SERVICES */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1px;
+            background: var(--border);
+        }
+        .svc-card {
+            background: var(--bg);
+            padding: 1.5rem;
+            transition: background 0.2s;
+        }
+        .svc-card:hover {
+            background: var(--bg3);
+        }
+        .svc-icon {
+            font-size: 22px;
+            color: var(--orange);
+            margin-bottom: 0.75rem;
+        }
+        .svc-card h3 {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            letter-spacing: 0.03em;
+        }
+        .svc-card p {
+            font-size: 12px;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+        /* PORTFOLIO */
+        .portfolio {
+            background: var(--bg2);
+        }
+        .port-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1px;
+            background: var(--border);
+        }
+        .port-card {
+            background: var(--bg2);
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: background 0.2s;
+        }
+        .port-card:hover {
+            background: var(--bg3);
+        }
+        .port-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 3px;
+            height: 0;
+            background: var(--orange);
+            transition: height 0.3s;
+        }
+        .port-card:hover::before {
+            height: 100%;
+        }
+        .port-label {
+            font-size: 10px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--orange);
+            margin-bottom: 0.5rem;
+        }
+        .port-card h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 22px;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        .port-card p {
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        .port-link {
+            font-size: 12px;
+            color: var(--orange);
+            text-decoration: none;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .retention-bar {
+            margin-top: 1rem;
+            height: 3px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        .retention-fill {
+            height: 100%;
+            background: var(--orange);
+            border-radius: 2px;
+        }
+        /* REFERENCES */
+        .refs {
+            background: var(--bg);
+        }
+        .refs-intro {
+            font-size: 15px;
+            color: var(--muted);
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+        }
+        .creators-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 10px;
+            margin-bottom: 2rem;
+        }
+        .creator-chip {
+            background: var(--bg3);
+            border: 1px solid var(--border);
+            border-radius: 3px;
+            padding: 10px 14px;
+            text-align: center;
+            transition: border-color 0.2s;
+        }
+        .creator-chip:hover {
+            border-color: var(--orange);
+        }
+        .creator-chip p {
+            font-size: 13px;
+            font-weight: 500;
+        }
+        .creator-chip span {
+            font-size: 11px;
+            color: var(--muted);
+        }
+        /* SKILLS */
+        .skills {
+            background: var(--bg2);
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 14px;
+        }
+        .skill-item {
+            background: var(--bg3);
+            padding: 1rem 1.25rem;
+            border-radius: 3px;
+        }
+        .skill-item p {
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .skill-item p span {
+            color: var(--orange);
+        }
+        .skill-track {
+            height: 3px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        .skill-fill {
+            height: 100%;
+            background: var(--orange);
+            border-radius: 2px;
+        }
+        /* TESTIMONIALS */
+        .testi {
+            background: var(--bg);
+        }
+        .testi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 14px;
+        }
+        .testi-card {
+            background: var(--bg3);
+            padding: 1.5rem;
+            border-radius: 3px;
+            border-top: 2px solid var(--orange);
+        }
+        .testi-quote {
+            font-size: 32px;
+            color: var(--orange);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+            font-family: 'Bebas Neue', sans-serif;
+        }
+        .testi-card p {
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        .testi-author strong {
+            font-size: 13px;
+            display: block;
+        }
+        .testi-author span {
+            font-size: 12px;
+            color: var(--muted);
+        }
+        /* CONTACT */
+        .contact {
+            background: var(--bg2);
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 1.5rem;
+        }
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 18px;
+            background: var(--bg3);
+            border-radius: 3px;
+            text-decoration: none;
+            border-left: 2px solid transparent;
+            transition: border-color 0.2s;
+        }
+        .contact-link:hover {
+            border-left-color: var(--orange);
+        }
+        .contact-link i {
+            font-size: 20px;
+            color: var(--orange);
+        }
+        .contact-link div p {
+            font-size: 12px;
+            color: var(--muted);
+        }
+        .contact-link div span {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text);
+        }
+        .wa-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--orange);
+            color: #fff;
+            padding: 14px 24px;
+            border-radius: 3px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            width: fit-content;
+            transition: background 0.2s;
+        }
+        .wa-btn:hover {
+            background: var(--orange-dim);
+        }
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .cf-input {
+            background: var(--bg3);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 12px 16px;
+            border-radius: 3px;
+            font-size: 14px;
+            font-family: 'DM Sans', sans-serif;
+            width: 100%;
+            transition: border-color 0.2s;
+        }
+        .cf-input:focus {
+            outline: none;
+            border-color: var(--orange);
+        }
+        .cf-textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+        .cf-btn {
+            background: var(--orange);
+            color: #fff;
+            padding: 13px 28px;
+            border: none;
+            border-radius: 3px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: background 0.2s;
+            width: fit-content;
+        }
+        .cf-btn:hover {
+            background: var(--orange-dim);
+        }
+        /* FOOTER */
+        .footer {
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .footer-social a {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.2s;
+        }
+        .footer-social a:hover {
+            color: var(--orange);
+        }
+        .footer p {
+            font-size: 13px;
+            color: var(--muted);
+        }
+        .footer span {
+            color: var(--orange);
+        }
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            .about-grid, .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-left .big-initial {
+                font-size: 80px;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .hero > * {
+            animation: fadeUp 0.7s ease both;
+        }
+        .hero-tag {
+            animation-delay: 0.1s;
+        }
+        .hero h1 {
+            animation-delay: 0.2s;
+        }
+        .hero p {
+            animation-delay: 0.3s;
+        }
+        .hero-btns {
+            animation-delay: 0.4s;
+        }
+    </style>
+<style>
+  .imageye-selected {
+    outline: 2px solid black !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5) !important;
+  }
+</style><style></style></head>
+<body>
+    <!-- NAV -->
+    <nav class="nav">
+        <div class="nav-logo">PAWAN<span>.</span></div>
+        <div class="nav-links">
+            <a onclick="document.getElementById(&#39;about&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">About</a>
+            <a onclick="document.getElementById(&#39;services&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Services</a>
+            <a onclick="document.getElementById(&#39;work&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Work</a>
+            <a onclick="document.getElementById(&#39;skills&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Skills</a>
+            <a onclick="document.getElementById(&#39;contact&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Contact</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-tag">Professional Video Editor · Maharashtra, India</div>
+        <h1>Editing Videos That<br>Keep People <span>Watching</span></h1>
+        <p>Professional Video Editor for YouTube Creators, Brands, and Businesses. I create high-retention videos inspired by India's top YouTube creators.</p>
+        <div class="hero-btns">
+            <button class="btn-primary" onclick="document.getElementById(&#39;contact&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">Hire Me</button>
+            <button class="btn-outline" onclick="document.getElementById(&#39;work&#39;).scrollIntoView({behavior:&#39;smooth&#39;})">View My Work</button>
+        </div>
+        <div class="hero-timeline" aria-hidden="true" id="tl"><div class="tl-bar" style="height: 23.6974px; opacity: 0.590861;"></div><div class="tl-bar" style="height: 40.741px; opacity: 0.552345;"></div><div class="tl-bar" style="height: 46.4592px; opacity: 0.655412;"></div><div class="tl-bar" style="height: 20.1276px; opacity: 0.624556;"></div><div class="tl-bar" style="height: 41.5537px; opacity: 0.735536;"></div><div class="tl-bar" style="height: 20.9139px; opacity: 0.698068;"></div><div class="tl-bar" style="height: 27.0099px; opacity: 0.753381;"></div><div class="tl-bar" style="height: 35.4968px; opacity: 0.638788;"></div><div class="tl-bar" style="height: 14.7374px; opacity: 0.457833;"></div><div class="tl-bar" style="height: 39.19px; opacity: 0.727166;"></div><div class="tl-bar" style="height: 45.3935px; opacity: 0.402266;"></div><div class="tl-bar" style="height: 11.5194px; opacity: 0.97784;"></div><div class="tl-bar" style="height: 30.0955px; opacity: 0.432786;"></div><div class="tl-bar" style="height: 23.9371px; opacity: 0.42339;"></div><div class="tl-bar" style="height: 47.4084px; opacity: 0.940975;"></div><div class="tl-bar" style="height: 21.4497px; opacity: 0.645605;"></div><div class="tl-bar" style="height: 26.3884px; opacity: 0.732732;"></div><div class="tl-bar" style="height: 53.0244px; opacity: 0.924861;"></div><div class="tl-bar" style="height: 43.8118px; opacity: 0.481324;"></div><div class="tl-bar" style="height: 50.6308px; opacity: 0.612176;"></div><div class="tl-bar" style="height: 21.9739px; opacity: 0.817262;"></div><div class="tl-bar" style="height: 44.1046px; opacity: 0.82561;"></div><div class="tl-bar" style="height: 16.3062px; opacity: 0.521394;"></div><div class="tl-bar" style="height: 8.75561px; opacity: 0.977239;"></div><div class="tl-bar" style="height: 9.66089px; opacity: 0.706183;"></div><div class="tl-bar" style="height: 36.5777px; opacity: 0.723714;"></div><div class="tl-bar" style="height: 12.2591px; opacity: 0.640059;"></div><div class="tl-bar" style="height: 24.0549px; opacity: 0.806432;"></div><div class="tl-bar" style="height: 20.4489px; opacity: 0.727033;"></div><div class="tl-bar" style="height: 41.7134px; opacity: 0.86996;"></div><div class="tl-bar" style="height: 26.6466px; opacity: 0.668893;"></div><div class="tl-bar" style="height: 16.4405px; opacity: 0.644965;"></div><div class="tl-bar" style="height: 43.1557px; opacity: 0.887501;"></div><div class="tl-bar" style="height: 47.5249px; opacity: 0.790291;"></div><div class="tl-bar" style="height: 55.3208px; opacity: 0.851272;"></div><div class="tl-bar" style="height: 31.6087px; opacity: 0.707909;"></div><div class="tl-bar" style="height: 22.4537px; opacity: 0.514235;"></div><div class="tl-bar" style="height: 52.554px; opacity: 0.833437;"></div><div class="tl-bar" style="height: 8.77568px; opacity: 0.518686;"></div><div class="tl-bar" style="height: 31.5496px; opacity: 0.57854;"></div><div class="tl-bar" style="height: 36.7586px; opacity: 0.847545;"></div><div class="tl-bar" style="height: 8.41973px; opacity: 0.58576;"></div><div class="tl-bar" style="height: 26.8687px; opacity: 0.999987;"></div><div class="tl-bar" style="height: 17.6128px; opacity: 0.635688;"></div><div class="tl-bar" style="height: 55.1725px; opacity: 0.445333;"></div><div class="tl-bar" style="height: 23.9659px; opacity: 0.781014;"></div><div class="tl-bar" style="height: 8.87262px; opacity: 0.472465;"></div><div class="tl-bar" style="height: 9.93856px; opacity: 0.924136;"></div><div class="tl-bar" style="height: 29.195px; opacity: 0.955541;"></div><div class="tl-bar" style="height: 18.2704px; opacity: 0.592874;"></div><div class="tl-bar" style="height: 10.009px; opacity: 0.674092;"></div><div class="tl-bar" style="height: 44.2562px; opacity: 0.904179;"></div><div class="tl-bar" style="height: 45.1932px; opacity: 0.905902;"></div><div class="tl-bar" style="height: 14.6718px; opacity: 0.783839;"></div><div class="tl-bar" style="height: 14.806px; opacity: 0.792938;"></div><div class="tl-bar" style="height: 20.3106px; opacity: 0.972442;"></div><div class="tl-bar" style="height: 44.7323px; opacity: 0.687997;"></div><div class="tl-bar" style="height: 33.6585px; opacity: 0.688483;"></div><div class="tl-bar" style="height: 12.8007px; opacity: 0.900486;"></div><div class="tl-bar" style="height: 15.8017px; opacity: 0.546961;"></div></div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section about">
+        <div class="section-tag">About Me</div>
+        <div class="section-title">The Editor<br>Behind The Frame</div>
+        <div class="divider"></div>
+        <div class="about-grid">
+            <div class="about-left">
+                <div class="big-initial">PP</div>
+                <p>I'm <strong>Pawan Pokhare</strong>, a freelance video editor and content creator from Maharashtra, India. I specialise in high-retention YouTube editing, documentary-style storytelling, and AI-assisted content creation.</p>
+                <p>I help creators increase watch time, audience retention, and engagement through modern, cinematic editing techniques — delivering content that doesn't just look good, but performs.</p>
+            </div>
+            <div class="about-right">
+                <div class="spec-item"><span>YouTube Documentary Style Editing</span></div>
+                <div class="spec-item"><span>High Retention Editing</span></div>
+                <div class="spec-item"><span>Instagram Reels &amp; YouTube Shorts</span></div>
+                <div class="spec-item"><span>Motion Graphics &amp; VFX</span></div>
+                <div class="spec-item"><span>Cinematic Storytelling</span></div>
+                <div class="spec-item"><span>AI Assisted Editing</span></div>
+                <div class="spec-item"><span>Viral Short-form Content</span></div>
+                <div class="spec-item"><span>Hindi &amp; Marathi Content Editing</span></div>
+                <div class="spec-item"><span>Educational &amp; Tech Content</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section" style="padding-top:4rem;padding-bottom:0;">
+        <div style="padding:0 0 2rem;">
+            <div class="section-tag">What I Do</div>
+            <div class="section-title">Services</div>
+            <div class="divider"></div>
+        </div>
+        <div class="services-grid">
+            <div class="svc-card"><div class="svc-icon"><i class="ti ti-brand-youtube"></i></div><h3>YouTube Video Editing</h3><p>Full-length YouTube videos with chapters, b-roll, music, and captions.</p></div>
+            <div class="svc-card"><div class="svc-icon"><i class="ti ti-movie"></i></div><h3>Documentary Style</h3><p>Cinematic storytelling, narration pacing, and visual sequencing.</p></div>
+            <div class="svc-card"><div class="svc-icon"><i class="ti ti-device-mobile"></i></div><h3>Reels &amp; Shorts</h3><p>Vertical short-form content optimised for engagement and virality.</p></div>
+            <div class="svc-card"><div class="svc-icon"><i class="ti ti-sparkles"></i></div><h3>Motion Graphics</h3><p>Custom animations, lower thirds, intros, and kinetic text effects.</p></div>
+            <div class="svc-card"><div class="svc-icon"><i class="ti ti-subtask"></i></div><h3>Subtitle Animation</h3><p>Animated captions, styled subtitles, and word-highlight effects.</p></div>
+            <div class="svc-card"><div class="svc-icon"><i class="ti ti-volume"></i></div><h3>Sound Design</h3><p>Music sync, SFX layering, voice clarity, and audio balancing.</p></div>
+            <div class="svc-card"><div class="svc-icon"><i class="ti ti-chart-line"></i></div><h3>Viral Retention Editing</h3><p>Pattern interrupts, hooks, and pacing to maximise viewer retention.</p></div>
+            <div class="svc-card"><div class="svc-icon"><i class="ti ti-robot"></i></div><h3>AI Enhanced Editing</h3><p>AI-generated visuals, voice enhancement, and smart scene transitions.</p></div>
+            <div class="svc-card"><div class="svc-icon"><i class="ti ti-refresh"></i></div><h3>Content Repurposing</h3><p>Convert long-form videos into shorts, clips, and social snippets.</p></div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="work" class="section portfolio">
+        <div class="section-tag">Portfolio</div>
+        <div class="section-title">My Work</div>
+        <div class="divider"></div>
+        <div class="port-grid">
+            <div class="port-card">
+                <div class="port-label">Original · YouTube Edit</div>
+                <h3>My Edit</h3>
+                <p>A full cinematic YouTube edit showcasing storytelling, pacing, and visual rhythm.</p>
+                <a class="port-link" href="https://youtu.be/UgyyyMZRYlA" target="_blank">Watch on YouTube →</a>
+                <div class="retention-bar"><div class="retention-fill" style="width:92%"></div></div>
+            </div>
+            <div class="port-card">
+                <div class="port-label">Client Work · Brand Edit</div>
+                <h3>Brand Project</h3>
+                <p>Commercial brand edit delivered for a client — showcasing professional production quality.</p>
+                <a class="port-link" href="https://drive.google.com/file/d/1KmQsY195P_2cR9inogphqhAye66jaUYt/view" target="_blank">Watch Project →</a>
+                <div class="retention-bar"><div class="retention-fill" style="width:87%"></div></div>
+            </div>
+            <div class="port-card">
+                <div class="port-label">Reference · Style Inspo</div>
+                <h3>Retention Style Edit</h3>
+                <p>Editing reference showcasing high-retention hooks and pattern interrupt techniques.</p>
+                <a class="port-link" href="https://youtu.be/tsAimcI66bo" target="_blank">Watch Reference →</a>
+                <div class="retention-bar"><div class="retention-fill" style="width:95%"></div></div>
+            </div>
+            <div class="port-card">
+                <div class="port-label">Reference · Color &amp; Motion</div>
+                <h3>Cinematic Color Grade</h3>
+                <p>Visual reference for cinematic color grading and motion graphics integration.</p>
+                <a class="port-link" href="https://youtu.be/yynD0AfjG04" target="_blank">Watch Reference →</a>
+                <div class="retention-bar"><div class="retention-fill" style="width:89%"></div></div>
+            </div>
+            <div class="port-card">
+                <div class="port-label">Reference · Documentary</div>
+                <h3>Documentary Sequence</h3>
+                <p>Inspiration reference for documentary-style pacing, transitions, and storytelling flow.</p>
+                <a class="port-link" href="https://youtu.be/AJxFBdZaH6g" target="_blank">Watch Reference →</a>
+                <div class="retention-bar"><div class="retention-fill" style="width:91%"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- REFERENCES -->
+    <section id="refs" class="section refs">
+        <div class="section-tag">Editing Style</div>
+        <div class="section-title">Inspired By<br>The Best</div>
+        <div class="divider"></div>
+        <p class="refs-intro">I can edit videos in documentary, cinematic, educational, storytelling, and high-retention YouTube styles similar to top global creators.</p>
+        <div class="creators-grid">
+            <div class="creator-chip"><p>Nitish Rajput</p><span>Documentary</span></div>
+            <div class="creator-chip"><p>Dhruv Rathee</p><span>Analytical</span></div>
+            <div class="creator-chip"><p>Ishan Sharma</p><span>Lifestyle</span></div>
+            <div class="creator-chip"><p>Ali Abdaal</p><span>Productivity</span></div>
+            <div class="creator-chip"><p>MrBeast</p><span>Retention</span></div>
+            <div class="creator-chip"><p>Ranveer Allahbadia</p><span>Podcast</span></div>
+            <div class="creator-chip"><p>Ryan Trahan</p><span>Storytelling</span></div>
+            <div class="creator-chip"><p>MagnatesMedia</p><span>Business Doc</span></div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section skills">
+        <div class="section-tag">Technical Skills</div>
+        <div class="section-title">Tools &amp; Expertise</div>
+        <div class="divider"></div>
+        <div class="skills-grid">
+            <div class="skill-item"><p>Adobe Premiere Pro <span>97%</span></p><div class="skill-track"><div class="skill-fill" style="width:97%"></div></div></div>
+            <div class="skill-item"><p>After Effects <span>90%</span></p><div class="skill-track"><div class="skill-fill" style="width:90%"></div></div></div>
+            <div class="skill-item"><p>CapCut <span>95%</span></p><div class="skill-track"><div class="skill-fill" style="width:95%"></div></div></div>
+            <div class="skill-item"><p>Canva <span>92%</span></p><div class="skill-track"><div class="skill-fill" style="width:92%"></div></div></div>
+            <div class="skill-item"><p>AI Editing Tools <span>88%</span></p><div class="skill-track"><div class="skill-fill" style="width:88%"></div></div></div>
+            <div class="skill-item"><p>Retention Editing <span>95%</span></p><div class="skill-track"><div class="skill-fill" style="width:95%"></div></div></div>
+            <div class="skill-item"><p>Motion Graphics <span>88%</span></p><div class="skill-track"><div class="skill-fill" style="width:88%"></div></div></div>
+            <div class="skill-item"><p>Color Grading <span>85%</span></p><div class="skill-track"><div class="skill-fill" style="width:85%"></div></div></div>
+            <div class="skill-item"><p>Audio Design <span>83%</span></p><div class="skill-track"><div class="skill-fill" style="width:83%"></div></div></div>
+            <div class="skill-item"><p>YouTube Strategy <span>80%</span></p><div class="skill-track"><div class="skill-fill" style="width:80%"></div></div></div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="section testi">
+        <div class="section-tag">Testimonials</div>
+        <div class="section-title">What Creators Say</div>
+        <div class="divider"></div>
+        <div class="testi-grid">
+            <div class="testi-card"><div class="testi-quote">"</div><p>Pawan completely transformed my channel's editing style. My average view duration jumped by 40% after just two videos. Incredible attention to pacing and storytelling.</p><div class="testi-author"><strong>Arjun Mehta</strong><span>YouTube Creator · 120K Subs</span></div></div>
+            <div class="testi-card"><div class="testi-quote">"</div><p>Fast delivery, professional results, and he genuinely understands retention editing. My Reels engagement doubled. Would highly recommend to any serious creator.</p><div class="testi-author"><strong>Sneha Patil</strong><span>Instagram Creator · Maharashtra</span></div></div>
+            <div class="testi-card"><div class="testi-quote">"</div><p>The documentary-style edit Pawan delivered for our brand was outstanding. It felt cinematic yet authentic. Our client loved it. Will definitely work together again.</p><div class="testi-author"><strong>Rohan Digital Agency</strong><span>Brand Client · Pune</span></div></div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section contact">
+        <div class="section-tag">Get In Touch</div>
+        <div class="section-title">Let's Work<br>Together</div>
+        <div class="divider"></div>
+        <div class="contact-grid">
+            <div>
+                <div class="contact-links">
+                    <a class="contact-link" href="mailto:pawanpokhare7@gmail.com">
+                        <i class="ti ti-mail"></i>
+                        <div><p>Email</p><span>pawanpokhare7@gmail.com</span></div>
+                    </a>
+                    <a class="contact-link" href="tel:+918308058930">
+                        <i class="ti ti-phone"></i>
+                        <div><p>Phone</p><span>+91 83080 58930</span></div>
+                    </a>
+                    <a class="contact-link" href="https://www.instagram.com/editor_guy_pawan?igsh=MTRhM2FnaXY1ZDZjbw==" target="_blank">
+                        <i class="ti ti-brand-instagram"></i>
+                        <div><p>Instagram</p><span>@editor_guy_pawan</span></div>
+                    </a>
+                    <a class="contact-link" href="https://www.youtube.com/@editor_boysYT" target="_blank">
+                        <i class="ti ti-brand-youtube"></i>
+                        <div><p>YouTube</p><span>@editor_boysYT</span></div>
+                    </a>
+                </div>
+                <a class="wa-btn" href="https://wa.me/918308058930" target="_blank">
+                    <i class="ti ti-brand-whatsapp"></i> Chat on WhatsApp
+                </a>
+            </div>
+            <div class="contact-form">
+                <input class="cf-input" type="text" placeholder="Your name" id="cf-name">
+                <input class="cf-input" type="email" placeholder="Your email" id="cf-email">
+                <input class="cf-input" type="text" placeholder="Subject" id="cf-subject">
+                <textarea class="cf-input cf-textarea" placeholder="Tell me about your project..." id="cf-msg"></textarea>
+                <button class="cf-btn" onclick="handleCF()">Send Message</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-social">
+            <a href="https://www.youtube.com/@editor_boysYT" target="_blank"><i class="ti ti-brand-youtube"></i> @editor_boysYT</a>
+            <a href="https://www.instagram.com/editor_guy_pawan?igsh=MTRhM2FnaXY1ZDZjbw==" target="_blank"><i class="ti ti-brand-instagram"></i> @editor_guy_pawan</a>
+            <a href="https://wa.me/918308058930" target="_blank"><i class="ti ti-brand-whatsapp"></i> WhatsApp</a>
+        </div>
+        <p>© 2026 <span>Pawan Pokhare</span> · Professional Video Editor · Maharashtra, India</p>
+    </footer>
+
+    <script>
+        const tl = document.getElementById('tl');
+        for (let i = 0; i < 60; i++) {
+            const d = document.createElement('div');
+            d.className = 'tl-bar';
+            d.style.height = (Math.random() * 50 + 8) + 'px';
+            d.style.opacity = (0.4 + Math.random() * 0.6);
+            tl.appendChild(d);
+        }
+
+        function handleCF() {
+            const n = document.getElementById('cf-name').value;
+            const e = document.getElementById('cf-email').value;
+            const s = document.getElementById('cf-subject').value;
+            const m = document.getElementById('cf-msg').value;
+            if (!n || !e || !m) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            alert('Message sent successfully! Pawan will contact you soon.');
+            document.getElementById('cf-name').value = '';
+            document.getElementById('cf-email').value = '';
+            document.getElementById('cf-subject').value = '';
+            document.getElementById('cf-msg').value = '';
+        }
+    </script>
+
+<div id="give-freely-root-ejkiikneibegknkgimmihdpcbcedgmpo" class="give-freely-root" data-extension-id="ejkiikneibegknkgimmihdpcbcedgmpo" data-extension-name="Volume Booster" style="display: block;"><template shadowrootmode="open"><style>
+  :host {
+    all: initial;
+  }
+
+  .gf-scroll-remove::-webkit-scrollbar {
+    border-radius-bottom-right: 15px;
+  }
+
+  button {
+    cursor: pointer;
+    transition: transform 0.1s ease;
+  }
+
+  button:active {
+    transform: scale(0.98);
+  }
+
+  .give-freely-close-button:hover {
+    opacity: 0.7;
+  }
+
+  input[type="radio"] {
+    margin-right: 8px;
+  }
+
+  hr {
+    border: none;
+    border-top: 1px solid #e5e5e5;
+    margin: 1em 0;
+  }
+
+  @media (max-width: 600px), (max-height: 480px) {
+    #give-freely-checkout-popup {
+      display: none !important;
+    }
+  }
+</style><div><div class="gf-app"></div></div></template></div></body></html>
